@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Budaya KB Lite</title>
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    <div class="c-form">
+
+        <h2> Hapus Budaya </h2>
+        <form method="POST" action="/hapusBudaya">
+            <p> Masukkan nama budaya yang akan dihapus</p>
+            <br>
+            <p>Nama</p>
+            <input type="text" name= nama required placeholder="Ketik disini" maxlength="40">
+            <button type="submit" > Hapus Data </button>
+
+        </form>
+        {% if value ==1 and isImport %}
+        <h3>Sukses menghapus data "{{result}}"</h3>
+        {% elif value == 0 and isImport %}
+        <h3>Data dengan nama {{result}} tidak ada dalam sistem!</h3>
+        {% elif result is defined and not isImport %}
+        <h3>File belum diimport! </h3>
+        {% endif %}
+    </div>
+</body>
+</html>

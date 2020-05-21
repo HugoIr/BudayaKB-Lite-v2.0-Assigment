@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+  font: normal 16px Verdana, Geneva;
+  background-image: url("./static/background.jpg"); 
+  background-size: cover;
+  background-position-x: center;
+  color: #ffffff;
+  width: 85%;
+  margin: auto;
+}
+
+.head{
+  margin-top: 20px;
+}
+
+.b-form{
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    -webkit-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 1000px;
+    height: 500px;
+    padding: 10px 40px;
+    background: rgba(0,0,0,0.6);
+    text-align: left;
+}
+
+.c-form{
+    position:absolute;
+    top: 78.5%;
+    left: 50%;
+    -webkit-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    width: 550px;
+    height: 550px;
+    padding: 10px 40px 45px;
+
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    color: #fff;
+}
+
+/* text ada dalam (tambah,ubah,dan hapus)Budaya.html */
+.c-form input[type=text]{
+  width:60%;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font: normal 16px Verdana, Geneva;
+}
+
+/* text2 ada dalam cariBudaya.html */
+.b-form input[type=text2]{
+  width:50%;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font: normal 16px Verdana, Geneva;
+}
+
+.c-form input[type=file],button, select{
+  font: normal 16px Verdana, Geneva;
+}
+
+/* Tabel pada cariBudaya.html */
+.resp{
+  overflow: auto;
+  height: 300px;
+}
+
+/* Tabel pada statsBudaya.html */
+.resp2{
+  margin-top: 25px;
+  overflow: auto;
+  height: 400px;
+  
+}
+
+.b-form h3{
+  color: #ffffff;
+}
+
+.c-form h3{
+  margin-top: 10px;
+  color: #fff;
+}
+::placeholder{
+  color:rgb(240, 221, 185);
+  opacity: 1;
+}
+
+h1{
+  color: #000000;
+}
+
+.welcome{
+  text-align: center;
+  color: rgb(255, 81, 0);
+}
+
+h3{
+  margin: 0;
+  color: #000000;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+li {
+  float: left;
+}
+
+/* Untuk list tulisan navbar (Home,Impor...) */
+li a, .dropbtn {
+  display: inline-block;
+  color:#000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Saat list dihinggapi */
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+/* Tampilan non-tulisan dari dropdown 'Sunting Budaya' */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+/* Tampilan tulisan dari dropdown 'Sunting Budaya' */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+/* Tampilan tulisan dari dropdown 'Sunting Budaya saat di-hover' */
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+<h1 class="head"><center>BudayaKB Lite v2.0</center></h1>
+<h3 class="head"><center>Sistem Manajemen Knowledge Base Budaya Indonesia</h3></center>
+<div class="container">
+  <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/imporBudaya">Impor Budaya</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Sunting Budaya</a>
+    <div class="dropdown-content">
+      <a href="/tambahBudaya">Tambah Budaya</a>
+      <a href="/ubahBudaya">Ubah Budaya</a>
+      <a href="/hapusBudaya">Hapus Budaya</a>
+    </div>
+  </li>
+    <li><a href="/cariBudaya">Cari Budaya</a></li>
+      <li><a href="/statsBudaya">Statistik Budaya</a></li>
+</ul>
+</div>
+</body>
+</html>

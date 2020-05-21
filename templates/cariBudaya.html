@@ -1,0 +1,78 @@
+<html>
+<head>
+        <title>BudayaKB Lite</title>
+</head>
+<body>
+         {% include 'includes/_navbar.html' %}
+         <div class="b-form">
+                <h2>Kriteria Pencarian</h2>
+        <h5>Notes: Masukkan input kosong pada pilihan All untuk mencari semua data</h5>
+                
+                <form method="POST", action= "" id="cari" >
+                <select name="CariApa" form="cari">
+                <option value="All"> All </option>
+                <option value="cariNama">Nama Budaya</option>
+                <option value="cariTipe">Tipe Budaya</option>
+                <option value="cariProv">Asal Provinsi Budaya</option>
+                </select>
+                <input type="text2" name="item">
+                <button type="submit" > Cari </button>
+
+
+                </form>
+        
+                
+                {% if result is defined and not isImport %}
+                <h3> File belum diimport! </h3>
+
+                {% elif result is defined and All is defined and result =='' and isImport %}
+                <h3> Ditemukan {{jumlah}} Nama Budaya</h3>
+                <div class="resp">
+                        <table border="4" class="resp">
+                                <tr>
+                                        <th>Nama Budaya</th>
+                                        <th>Tipe</th>
+                                        <th>Provinsi</th>
+                                        <th>Reference URL</th>
+                                </tr>
+                                {% for data in datas %}
+                                <tr>
+                                        <th>{{data.nama}}</th>
+                                        <th>{{data.tipe}}</th>
+                                        <th>{{data.prov}}</th>
+                                        <th>{{data.url}}</th>
+                                </tr>
+                                {% endfor %}
+                        
+                        </table>
+                </div>
+
+                {% elif result is defined and jumlah== 0 and isImport %}
+                <h3> Data yang anda cari tidak ditemukan! </h3>
+
+
+                {% elif result is defined and not All and result !='' and isImport %}
+                <h3> Ditemukan {{jumlah}} data dengan {{apa}}: {{result}}</h3>
+                <div class="resp">
+                        <table border="4" class="resp">
+                                <tr>
+                                        <th>Nama Budaya</th>
+                                        <th>Tipe</th>
+                                        <th>Provinsi</th>
+                                        <th>Reference URL</th>
+                                </tr>
+                                {% for data in datas %}
+                                <tr>
+                                        <th>{{data.nama}}</th>
+                                        <th>{{data.tipe}}</th>
+                                        <th>{{data.prov}}</th>
+                                        <th>{{data.url}}</th>
+                                </tr>
+                                {% endfor %}
+                        
+                        </table>
+                </div>
+                {% endif %}
+        </div>
+</body>
+</html>

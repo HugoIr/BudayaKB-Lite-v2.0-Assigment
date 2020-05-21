@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title> Budaya KB Lite</title>
+</head>
+<body>
+    {% include 'includes/_navbar.html' %}
+    <div class="c-form">
+        <h2> Ubah Budaya </h2>
+        <form method="POST" action="/ubahBudaya">
+            <p> Masukkan data budaya yang akan diubah</p>
+            <br>
+            <p>Nama</p>
+            <input type="text" name= nama required placeholder="Ketik Nama" maxlength="40">
+            <p>Tipe</p>
+            <input type="text" name= tipe required placeholder="Ketik Tipe" maxlength="40">
+            <p>Provinsi</p>
+            <input type="text" name= provinsi required placeholder="Ketik Provinsi" maxlength="40"> 
+            <p>URL Reference</p>
+            <input type="text" name= url required placeholder="Ketik URL">
+            <br>
+            <button type="submit"> Ubah Data </button>
+
+        </form>
+        {% if value ==1 and isImport%}
+        <h3>Sukses mengubah data "{{result}}"</h3>
+        {% elif value == 0 and isImport %}
+        <h3>Data dengan nama {{result}} tidak ada dalam sistem!</h3>
+        {% elif result is defined and not isImport %}
+        <h3>File belum diimport! </h3>
+        {% endif %}
+    </div>
+</body>
+</html>

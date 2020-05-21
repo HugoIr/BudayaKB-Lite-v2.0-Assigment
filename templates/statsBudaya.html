@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>BudayaKB Lite</title>
+</head>
+
+<body>
+         {% include 'includes/_navbar.html' %}
+         <div class="c-form">
+                <h2>Kriteria Pencarian Statistik Data Budaya</h2>
+                <form method="POST", action= "" id="stats" >
+                <select name="opsi" form="stats">
+                <option value="All">All</option>
+                <option value="Tipe Budaya">Tipe Budaya</option>
+                <option value="Asal Provinsi Budaya">Asal Provinsi Budaya</option>
+                </select>
+                <button type="submit" > Tampilkan </button>
+                </form>
+                
+        
+                {% if dicAda is defined and dicAda != 0 and dic is not defined%}
+                <h3> Budaya KB memiliki total {{dicAda}} data budaya </h3>
+
+                {% elif dic is defined and dicAda %}
+                <div class="resp2">
+                        <table border="4">
+                                <tr>
+                                        <th>Kriteria</th>
+                                        <th>Jumlah</th>
+                                </tr>
+                                {% for i,n in dic.items() %}
+                                <tr>
+                                        <th>{{i}}</th>
+                                        <th>{{n}}</th>
+                                </tr>
+                                {% endfor %}
+
+                        </table>
+                </div>
+                {% elif dicAda is defined and not dicAda%}
+                <h3>File belum diimport!</h3>
+                {% endif %}
+        </div>
+</body>
+</html>
